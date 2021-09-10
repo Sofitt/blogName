@@ -1,0 +1,50 @@
+//<Шрифты>==========================================
+
+//<Подключаем шрифты>==========================================
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700&family=Roboto&family=Volkhov:wght@700&display=swap');
+//</Подключаем шрифты>==========================================
+
+//<Шрифт по-умолчанию>==========================================
+$fontFamily: 'Poppins';
+//</Шрифт по-умолчанию>==========================================
+//<Цвет шрифта по-умолчанию>==========================================
+$color: rgba(94, 98, 130, 1);
+//</Цвет шрифта по-умолчанию>==========================================
+
+//</Шрифты>==========================================
+
+//<Переменные>==========================================
+$minWidth: 320px; // минимальная ширина страницы. Не менять
+$maxWidth: 1440; // максимальная ширина страницы
+$maxWidthContainer: 1190; // Ширина контейнера
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</Переменные>==========================================
+
+//<Миксины>==========================================
+
+// Адаптивный шрифт
+// ПК font size, мобильный font size (адаптивно плавно меняется)
+@mixin adaptive-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize*0.7;
+  @media (max-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - #{$minWidth}) / #{$maxWidth}));
+  }
+  @media (min-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} * (100vw / #{$maxWidth}));
+  }
+}
+
+// Плавный контейнер
+@mixin transitionAll() {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+//</Миксины>==========================================
