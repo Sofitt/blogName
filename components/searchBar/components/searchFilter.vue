@@ -1,17 +1,8 @@
 <template>
 <div class="filter">
-  <dropdown :title="category" :items="categoryItems" class="category"></dropdown>
-  <dropdown :title="listType" :items="listTypeItems" class="type"></dropdown>
-  <dropdown :title="sort" :items="sortItems" class="sort"></dropdown>
-<!--  <button class="filter__btn category">-->
-<!--    {{ category }}-->
-<!--  </button>-->
-<!--  <button class="filter__btn type">-->
-<!--    {{ listType }}-->
-<!--  </button>-->
-<!--  <button class="filter__btn sort">-->
-<!--    {{ sort }}-->
-<!--  </button>-->
+  <dropdown :uid="1" :isCheckbox="true" :title="category" :items="categoryItems" class="category"></dropdown>
+  <dropdown :uid="2" :title="listType" :items="listTypeItems" class="type"></dropdown>
+  <dropdown :uid="3" :title="sort" :items="sortItems" class="sort"></dropdown>
 </div>
 </template>
 
@@ -29,9 +20,9 @@ export default {
   },
   methods: {},
   computed: {
-    data() {
-      return this.$store.getters["searchFilter.js/getFilterData"];
-    },
+    // data() {
+    //   return this.$store.getters["searchFilter.js/getFilterData"];
+    // },
     categoryItems() {
       return this.$store.getters["searchFilter/getFilterCategories"]
     },

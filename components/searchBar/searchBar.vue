@@ -2,8 +2,9 @@
 <section class="search">
   <div class="search__main">
     <div class="search__bar">
-      <img src="../../assets/svg/search-icon.svg" alt="" class="search__find icon">
-      <input type="text" class="search__input" placeholder="Поиск по статьям">
+      <searchField :title="'Поиск по статьям'"></searchField>
+<!--      <img src="../../assets/svg/search-icon.svg" alt="" class="search__find icon">-->
+<!--      <input type="text" class="search__input" placeholder="Поиск по статьям">-->
       <!-- Или сюда btn -->
       <button class="search__filter">
         <img src="../../assets/svg/filter-icon.svg" alt="" class="icon">
@@ -20,10 +21,11 @@
 </template>
 
 <script>
+import searchField from "@/components/searchBar/components/searchField";
 import searchFilter from "@/components/searchBar/components/searchFilter";
 export default {
   name: "searchBar",
-  components: {searchFilter},
+  components: {searchField, searchFilter},
   data: function () {
     return {
 
@@ -46,7 +48,6 @@ export default {
   flex-flow: column;
   align-items: center;
   justify-content: space-between;
-
   margin-top: 150px;
 
   &__main {
@@ -69,41 +70,13 @@ export default {
     width: 100%;
     max-width: 1068px;
   }
-// Поле для ввода
-  &__input {
-    padding-left: 60px;
-    height: 40px;
-    flex: 0 0 95%;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 20px;
-    /* identical to box height, or 125% */
-    letter-spacing: 0.2px;
-
-    color: #3B3C40;
-
- &:placeholder-shown {
-   color: rgba(193, 195, 202, 1);
-
- }
-  }
-  // Icon
-  &__find {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    padding-left: 18px;
-  }
   // Filter btn
   &__filter {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-right: 16px;
+    padding-left: 16px;
 
     background: transparent;
   }
