@@ -3,15 +3,11 @@
   <div class="search__main">
     <div class="search__bar">
       <searchField :title="'Поиск по статьям'"></searchField>
-<!--      <img src="../../assets/svg/search-icon.svg" alt="" class="search__find icon">-->
-<!--      <input type="text" class="search__input" placeholder="Поиск по статьям">-->
-      <!-- Или сюда btn -->
       <button class="search__filter">
         <img src="../../assets/svg/filter-icon.svg" alt="" class="icon">
       </button>
     </div>
     <button class="search__btn">
-      <!-- иконка -->
       <img src="../../assets/svg/list-plus-icon.svg" alt="" class="search__listPlus icon">
       Новая статья
     </button>
